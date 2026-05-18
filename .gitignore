@@ -1,0 +1,23 @@
+# Estado do Terraform — contém dados sensíveis
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Cache local
+.terraform/
+.terraform.lock.hcl     # opcional commitar; recomendo NÃO no início
+
+# Variáveis com valores reais
+terraform.tfvars
+*.auto.tfvars
+
+# Planos gerados
+*.tfplan
+*.plan
+
+# Logs
+crash.log
+crash.*.log
+
+# Chaves
+keys/

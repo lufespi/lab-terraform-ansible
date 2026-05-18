@@ -1,0 +1,24 @@
+- name: Install Apache on my hosts
+  hosts: vms_devops01
+  become: true
+  tasks:
+    - name: Update all packages
+      apt:
+        update_cache: yes
+        upgrade: yes
+        
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Verify Apache is running
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+    - name: Create index.html
+      copy:
+        dest: /var/www/html/index.html
+        content: "Hello World da Imply"
